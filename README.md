@@ -64,4 +64,6 @@ Projekt jest statyczny, ale przygotowany do dalszego rozwoju:
 
 ## Autorzy
 
+Kinga Łopata, Piotr Kula, Amelia Kucharz
+
 

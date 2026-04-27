@@ -1,6 +1,6 @@
-# Cat Lounge Cafe
+# Kocia Kawiarnia
 
-Statyczny projekt zaliczeniowy typu one-page przygotowany w Angularze na bazie projektu `Cat-Cafe-main`. Wersja w tym repo została uproszczona do jednej strony i dopasowana do wymagań z pliku PWI 2025/2026:
+Statyczny projekt zaliczeniowy typu one-page przygotowany w Angularze:
 
 - semantyczna struktura HTML5
 - nawigacja one-page z kotwicami
@@ -44,7 +44,7 @@ Aplikacja uruchamia się domyślnie pod `http://localhost:4200/`.
 - `event-card`
 - wspólne klasy `shell`, `section-heading`, `section-copy`
 
-Te elementy zostały zaprojektowane jako spójny zestaw wizualny, co odpowiada wymaganiom pracy grupowej dotyczącym wspólnych komponentów i tokenów stylu.
+Te elementy zostały zaprojektowane jako spójny zestaw wizualny.
 
 ## Integracja z backendem
 

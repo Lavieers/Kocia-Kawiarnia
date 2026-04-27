@@ -231,3 +231,99 @@
       </div>
     </div>
   </section>
+  
+  <section class="section section--cats" id="koty">
+    <div class="shell">
+      <div class="section-heading">
+        <p class="eyebrow">Nasi rezydenci</p>
+        <h2>Poznaj koty, które tworzą codzienny rytm Mrau Cafe.</h2>
+      </div>
+
+      <div class="cats-grid">
+        @for (cat of catCards; track cat.name) {
+          <article class="cat-card">
+            <div class="cat-card__media">
+              <img [src]="cat.image" [alt]="cat.alt" loading="lazy">
+              <div class="cat-card__nameplate">
+                <h3>{{ cat.name }}</h3>
+              </div>
+            </div>
+            <div class="cat-card__body">
+              <p class="cat-card__role">{{ cat.trait }}</p>
+              <p>{{ cat.description }}</p>
+            </div>
+          </article>
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="wydarzenia">
+    <div class="shell events">
+      <article class="section-copy">
+        <p class="eyebrow">Chwile w Mrau Cafe</p>
+        <h2>Najlepsze chwile w Mrau Cafe tworzą się zupełnie naturalnie.</h2>
+        <p>
+          Poranna kawa przy oknie, popołudniowa planszówka z przyjaciółmi, cichy czas z książką albo
+          krótka przerwa od miasta. Nasza kawiarnia została stvorzona właśnie dla takich momentów.
+        </p>
+      </article>
+
+      <div class="events__list">
+        @for (moment of moments; track moment.title) {
+          <article class="event-card">
+            <h3>{{ moment.title }}</h3>
+            <p>{{ moment.description }}</p>
+          </article>
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--contact" id="kontakt">
+    <div class="shell contact">
+      <article class="section-copy">
+        <p class="eyebrow">Kontakt i rezerwacje</p>
+        <h2>Jeśli planujesz wizytę solo, z bliską osobą albo w małej grupie, napisz do nas.</h2>
+        <p>
+          Odpowiemy z propozycją terminu i pomożemy dobrać najlepszy moment na spokojną wizytę.
+          Rezerwacje grupowe realizujemy kameralnie, z myślą o komforcie naszych kotów.
+        </p>
+
+        <ul class="contact__details" aria-label="Dane kontaktowe">
+          <li>ul. Kocia 12, 20-001 Lublin</li>
+          <li>poniedziałek-piątek 10:00-20:00, weekend 10:00-21:00</li>
+          <li>kontakt&#64;mraucafe.pl</li>
+          <li>małe grupy, spokojne spotkania i rezerwacje okolicznościowe</li>
+        </ul>
+      </article>
+
+      <form class="contact-form" novalidate>
+        <label>
+          Imię
+          <input type="text" name="name" placeholder="Np. Marta" required autocomplete="given-name">
+        </label>
+        <label>
+          E-mail
+          <input type="email" name="email" placeholder="twoj@email.pl" required autocomplete="email">
+        </label>
+        <label>
+          Termin wizyty
+          <input type="date" name="date">
+        </label>
+        <label>
+          Wiadomość
+          <textarea name="message" rows="5" placeholder="Napisz, czy planujesz spokojną wizytę, spotkanie z bliskimi czy rezerwację dla grupy." required></textarea>
+        </label>
+        <button class="button button--primary button--full" type="submit">Wyślij zapytanie</button>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="shell site-footer__inner">
+    <p>Mrau Cafe © {{ currentYear }}. Kocia kawiarnia stworzona z myślą o spokojnych chwilach i dobrym towarzystwie.</p>
+    <a href="#start">Wróć na górę</a>
+  </div>
+</footer>

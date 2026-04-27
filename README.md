@@ -62,6 +62,10 @@ Projekt jest statyczny, ale przygotowany do dalszego rozwoju:
 - nawigacja i przyciski mają wyraźne stany fokus
 - treść i struktura są przygotowane pod dobre wyniki Lighthouse w kategoriach Accessibility, Best Practices i SEO
 
+## Projekt w Figmie
+
+https://www.figma.com/design/wkqu1tWT4xMqlm31hl50Ea/Kocia-Kawiarnia--Mrau-Cafe-?node-id=0-1&t=DHl2msTsFf7EXNTV-1
+
 ## Autorzy
 
 Kinga Łopata, Piotr Kula, Amelia Kucharz

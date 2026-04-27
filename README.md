@@ -1,59 +1,63 @@
-# KociaKawiarnia
+# Cat Lounge Cafe
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.2.
+Statyczny projekt zaliczeniowy typu one-page przygotowany w Angularze na bazie projektu `Cat-Cafe-main`. Wersja w tym repo została uproszczona do jednej strony i dopasowana do wymagań z pliku PWI 2025/2026:
 
-## Development server
+- semantyczna struktura HTML5
+- nawigacja one-page z kotwicami
+- pełna responsywność dla mobile, tablet i desktop
+- sekcja w układzie 3 kolumn
+- mobilne menu typu hamburger
+- użycie CSS variables, Grid i Flex
+- poprawne atrybuty `alt`, widoczne focus states i przygotowanie pod WCAG AA
+- struktura gotowa do późniejszego podpięcia backendu lub API
 
-To start a local development server, run:
-
-```bash
-ng serve
-```
-
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## Uruchomienie
 
 ```bash
-ng generate component component-name
+npm.cmd install
+npm.cmd start
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Aplikacja uruchamia się domyślnie pod `http://localhost:4200/`.
 
-```bash
-ng generate --help
-```
+## Struktura folderów
 
-## Building
+- `src/app/app.ts` zawiera dane sekcji i prostą logikę menu mobilnego.
+- `src/app/app.html` buduje całą stronę one-page.
+- `src/app/app.scss` odpowiada za layout, komponenty i breakpoints.
+- `src/styles.scss` trzyma style globalne, zmienne CSS i fokus dostępności.
+- `public/` zawiera lokalne zdjęcia i logo użyte w projekcie.
+- `docs/ux-analysis.md` zawiera krótką analizę UX wymaganą do oddania.
 
-To build the project run:
+## Podział plików
 
-```bash
-ng build
-```
+- HTML: semantyczne sekcje `header`, `nav`, `main`, `section`, `footer` zapisane w `app.html`.
+- CSS/SCSS: podział na styl globalny i styl komponentu głównego.
+- TS: dane kart, linków i obsługa hamburgera w komponencie root.
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+## Reużywalne elementy
 
-## Running unit tests
+- `button`
+- `info-card`
+- `menu-card`
+- `cat-card`
+- `event-card`
+- wspólne klasy `shell`, `section-heading`, `section-copy`
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+Te elementy zostały zaprojektowane jako spójny zestaw wizualny, co odpowiada wymaganiom pracy grupowej dotyczącym wspólnych komponentów i tokenów stylu.
 
-```bash
-ng test
-```
+## Integracja z backendem
 
-## Running end-to-end tests
+Projekt jest statyczny, ale przygotowany do dalszego rozwoju:
 
-For end-to-end (e2e) testing, run:
+- formularz kontaktowy można podpiąć do REST API lub Angular `HttpClient`
+- karty menu i kotów można zasilać z bazy danych lub CMS
+- sekcję wydarzeń można rozszerzyć o harmonogram i panel administracyjny
 
-```bash
-ng e2e
-```
+## Dokumentacja jakości
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- zastosowano zmienne CSS do kolorów, promieni i cieni
+- układ oparto o CSS Grid i Flexbox
+- obrazy poza hero korzystają z `loading="lazy"`
+- nawigacja i przyciski mają wyraźne stany fokus
+- treść i struktura są przygotowane pod dobre wyniki Lighthouse w kategoriach Accessibility, Best Practices i SEO

@@ -15,7 +15,7 @@ Statyczny projekt zaliczeniowy typu one-page przygotowany w Angularze:
 
 ```bash
 npm.cmd install
-npm.cmd start
+ng.cmd serve
 ```
 
 Aplikacja uruchamia się domyślnie pod `http://localhost:4200/`.
@@ -27,7 +27,7 @@ Aplikacja uruchamia się domyślnie pod `http://localhost:4200/`.
 - `src/app/app.scss` odpowiada za layout, komponenty i breakpoints.
 - `src/styles.scss` trzyma style globalne, zmienne CSS i fokus dostępności.
 - `public/` zawiera lokalne zdjęcia i logo użyte w projekcie.
-- `docs/ux-analysis.md` zawiera krótką analizę UX wymaganą do oddania.
+- `docs/ux-analysis.md` zawiera krótką analizę UX.
 
 ## Podział plików
 
@@ -61,3 +61,7 @@ Projekt jest statyczny, ale przygotowany do dalszego rozwoju:
 - obrazy poza hero korzystają z `loading="lazy"`
 - nawigacja i przyciski mają wyraźne stany fokus
 - treść i struktura są przygotowane pod dobre wyniki Lighthouse w kategoriach Accessibility, Best Practices i SEO
+
+## Autorzy
+
+

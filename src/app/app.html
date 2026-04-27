@@ -113,3 +113,121 @@
       </div>
     </div>
   </section>
+
+   <section class="section section--menu" id="menu">
+    <div class="shell">
+      <div class="section-heading">
+        <p class="eyebrow">Menu</p>
+        <h2>Spokojna kawa, coś dobrego<br>i kilka sezonowych przyjemności.</h2>
+      </div>
+
+      <div class="menu-toolbar">
+        <div class="menu-switch" role="tablist" aria-label="Przełączanie rodzaju menu">
+          <button
+            class="menu-switch__button"
+            type="button"
+            role="tab"
+            [attr.aria-selected]="selectedMenuTab === 'fixed'"
+            [class.menu-switch__button--active]="selectedMenuTab === 'fixed'"
+            (click)="selectMenuTab('fixed')"
+          >
+            Menu stałe
+          </button>
+          <button
+            class="menu-switch__button"
+            type="button"
+            role="tab"
+            [attr.aria-selected]="selectedMenuTab === 'seasonal'"
+            [class.menu-switch__button--active]="selectedMenuTab === 'seasonal'"
+            (click)="selectMenuTab('seasonal')"
+          >
+            Menu sezonowe
+          </button>
+        </div>
+
+        <p class="menu-toolbar__hint">
+          @if (selectedMenuTab === 'fixed') {
+            To pozycje, które znajdziesz u nas niezależnie od pory roku.
+          } @else {
+            W tej zakładce znajdziesz wyłącznie 4 aktualne pozycje z menu sezonowego.
+          }
+        </p>
+      </div>
+
+      @if (selectedMenuTab === 'fixed') {
+        <div class="menu-categories" role="tablist" aria-label="Kategorie menu stałego">
+          <button
+            class="menu-categories__button"
+            type="button"
+            [class.menu-categories__button--active]="selectedFixedCategory === 'coffee'"
+            [attr.aria-selected]="selectedFixedCategory === 'coffee'"
+            (click)="selectFixedCategory('coffee')"
+          >
+            Kawy i dodatki
+          </button>
+          <button
+            class="menu-categories__button"
+            type="button"
+            [class.menu-categories__button--active]="selectedFixedCategory === 'tea'"
+            [attr.aria-selected]="selectedFixedCategory === 'tea'"
+            (click)="selectFixedCategory('tea')"
+          >
+            Herbaty
+          </button>
+          <button
+            class="menu-categories__button"
+            type="button"
+            [class.menu-categories__button--active]="selectedFixedCategory === 'food'"
+            [attr.aria-selected]="selectedFixedCategory === 'food'"
+            (click)="selectFixedCategory('food')"
+          >
+            Coś na większy głód
+          </button>
+          <button
+            class="menu-categories__button"
+            type="button"
+            [class.menu-categories__button--active]="selectedFixedCategory === 'cold'"
+            [attr.aria-selected]="selectedFixedCategory === 'cold'"
+            (click)="selectFixedCategory('cold')"
+          >
+            Shakes, smoothie i inne napoje
+          </button>
+        </div>
+      }
+
+      <div class="menu-grid menu-grid--detailed">
+        @for (section of activeMenuSections; track section.title) {
+          <article class="menu-panel">
+            <div class="menu-panel__media" aria-label="Zdjęcia kotów w menu">
+              <div class="menu-gallery">
+                @for (photo of section.gallery; track photo.src) {
+                  <div class="menu-gallery__item">
+                    <img [src]="photo.src" [alt]="photo.alt" loading="lazy">
+                  </div>
+                }
+              </div>
+            </div>
+
+            <div class="menu-panel__body">
+              <p class="menu-panel__subtitle">{{ section.subtitle }}</p>
+              <h3>{{ section.title }}</h3>
+
+              <ul class="menu-list" aria-label="{{ section.title }}">
+                @for (item of section.items; track item.name) {
+                  <li class="menu-list__item">
+                    <div class="menu-list__topline">
+                      <strong>{{ item.name }}</strong>
+                      <span>{{ item.price }}</span>
+                    </div>
+                    @if (item.details) {
+                      <p>{{ item.details }}</p>
+                    }
+                  </li>
+                }
+              </ul>
+            </div>
+          </article>
+        }
+      </div>
+    </div>
+  </section>

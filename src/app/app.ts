@@ -83,7 +83,7 @@ export class App {
         'Aromatyczna kawa, lekkie przekąski i miękkie światło budują atmosferę, do której chce się wracać.'
     }
   ];
-  
+
   readonly fixedMenuSections: Record<FixedMenuCategory, MenuSection> = {
     coffee: {
       title: 'Kawy i dodatki',
@@ -235,3 +235,102 @@ export class App {
       ]
     }
   ];
+
+  readonly catCards: CatCard[] = [
+    {
+      name: 'cynamon',
+      trait: 'Pan wejścia z charakterem',
+      description:
+        'Patrzy prosto, podchodzi bez wahania i od pierwszej chwili daje znać, że w tej kawiarni ma swoje zasady.',
+      image: '/cats/cynamon.jpg',
+      alt: 'Rudy kot cynamon stojący na drewnianym blacie'
+    },
+    {
+      name: 'fafel & felka',
+      trait: 'Duet od miękkich miejsc',
+      description:
+        'Najlepiej czują się tam, gdzie jest wygodnie, blisko siebie i wystarczająco spokojnie, żeby po prostu poleżeć.',
+      image: '/cats/fafel-felka.jpg',
+      alt: 'Fafel i felka odpoczywający razem w przytulnym legowisku'
+    },
+    {
+      name: 'Alex & Ada',
+      trait: 'Nierozłączni w kadrze',
+      description:
+        'Najchętniej pokazują się razem, wtuleni i spokojni, jakby najlepiej wiedzieli, że dobre miejsce poznaje się po tym, z kim można w nim odpocząć.',
+      image: '/cats/alex-ada.jpg',
+      alt: 'Alex i Ada odpoczywający razem w promieniach światła'
+    },
+    {
+      name: 'diuna',
+      trait: 'Królowa okiennego światła',
+      description:
+        'Lubi półcień, miękkie światło i taki punkt obserwacyjny, z którego można widzieć wszystko bez zbędnego zamieszania.',
+      image: '/cats/diuna.jpg',
+      alt: 'Kotka diuna w bocznym profilu przy oknie'
+    },
+    {
+      name: 'Helena',
+      trait: 'Spojrzenie, które zatrzymuje',
+      description:
+        'Jest w niej coś bardzo spokojnego i bardzo uważnego, jakby potrafiła sprawić, że każdy odruchowo zwalnia krok.',
+      image: '/cats/helena.jpg',
+      alt: 'Kotka Helena patrząca prosto w obiektyw'
+    },
+    {
+      name: 'zmorek',
+      trait: 'Mały odkrywca',
+      description:
+        'Chętnie zagląda w pudełka, na oparcia i w każde miejsce, które wygląda jak początek nowej przygody.',
+      image: '/cats/zmorek.jpg',
+      alt: 'Kot zmorek wyglądający z kartonu'
+    }
+  ];
+
+  readonly moments: MomentCard[] = [
+    {
+      title: 'Poranki z książką',
+      description:
+        'Najcichsze godziny dnia, miękkie światło i mruczenie w tle. Idealny moment na czytanie, pracę i spokojną kawę.'
+    },
+    {
+      title: 'Popołudnia z planszówkami',
+      description:
+        'Przy stolikach pojawiają się gry, deski do dzielenia się i dłuższe rozmowy, które kończą się o wiele za szybko.'
+    },
+    {
+      title: 'Kameralne rezerwacje',
+      description:
+        'Małe spotkania, urodziny i wizyty grupowe mają tu własny rytm: bez zgiełku, za to z dobrą kawą i kocim klimatem.'
+    }
+  ];
+
+  get activeMenuSections(): MenuSection[] {
+    return this.selectedMenuTab === 'fixed'
+      ? [this.fixedMenuSections[this.selectedFixedCategory]]
+      : this.seasonalMenuSections;
+  }
+
+  selectFixedCategory(category: FixedMenuCategory): void {
+    this.selectedFixedCategory = category;
+  }
+
+  selectMenuTab(tab: MenuTab): void {
+    this.selectedMenuTab = tab;
+  }
+
+  toggleMenu(): void {
+    this.isMenuOpen = !this.isMenuOpen;
+    this.syncBodyClass();
+  }
+
+  closeMenu(): void {
+    this.isMenuOpen = false;
+    this.syncBodyClass();
+  }
+
+  private syncBodyClass(): void {
+    if (typeof document === 'undefined') return;
+    document.body.classList.toggle('menu-open', this.isMenuOpen);
+  }
+}

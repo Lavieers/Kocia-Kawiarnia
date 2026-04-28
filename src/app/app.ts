@@ -22,6 +22,8 @@ type MenuItem = {
 type MenuGalleryImage = {
   src: string;
   alt: string;
+  width: number;
+  height: number;
 };
 
 type MenuSection = {
@@ -37,6 +39,8 @@ type CatCard = {
   description: string;
   image: string;
   alt: string;
+  imageWidth: number;
+  imageHeight: number;
 };
 
 type MomentCard = {
@@ -48,7 +52,7 @@ type MomentCard = {
   selector: 'app-root',
   standalone: true,
   templateUrl: './app.html',
-  styleUrl: './app.scss'
+  styleUrl: './app.scss',
 })
 export class App {
   isMenuOpen = false;
@@ -63,25 +67,25 @@ export class App {
     { label: 'Menu', href: '#menu' },
     { label: 'Koty', href: '#koty' },
     { label: 'Chwile u nas', href: '#wydarzenia' },
-    { label: 'Kontakt', href: '#kontakt' }
+    { label: 'Kontakt', href: '#kontakt' },
   ];
 
   readonly visitCards: VisitCard[] = [
     {
       title: 'Spokojna strefa spotkań',
       description:
-        'Wnętrze zostało zaplanowane tak, by łatwo znaleźć miejsce na rozmowę, randkę albo spokojną godzinę z książką.'
+        'Wnętrze zostało zaplanowane tak, by łatwo znaleźć miejsce na rozmowę, randkę albo spokojną godzinę z książką.',
     },
     {
       title: 'Koty na pierwszym planie',
       description:
-        'Każdy rezydent ma własne tempo. Goście poznają koty naturalnie, bez pośpiechu i bez naruszania ich komfortu.'
+        'Każdy rezydent ma własne tempo. Goście poznają koty naturalnie, bez pośpiechu i bez naruszania ich komfortu.',
     },
     {
       title: 'Małe przyjemności',
       description:
-        'Aromatyczna kawa, lekkie przekąski i miękkie światło budują atmosferę, do której chce się wracać.'
-    }
+        'Aromatyczna kawa, lekkie przekąski i miękkie światło budują atmosferę, do której chce się wracać.',
+    },
   ];
 
   readonly fixedMenuSections: Record<FixedMenuCategory, MenuSection> = {
@@ -89,9 +93,24 @@ export class App {
       title: 'Kawy i dodatki',
       subtitle: 'Stałe klasyki',
       gallery: [
-        { src: '/cats/cynamon.jpg', alt: 'Rudy kot cynamon stojący na blacie w kawiarni' },
-        { src: '/cats/helena.jpg', alt: 'Kotka Helena patrząca prosto w obiektyw' },
-        { src: '/cats/zmorek.jpg', alt: 'Kot zmorek wyglądający z kartonu' }
+        {
+          src: '/optimized/cats/cynamon-640.webp',
+          alt: 'Rudy kot cynamon stojący na blacie w kawiarni',
+          width: 640,
+          height: 852,
+        },
+        {
+          src: '/optimized/cats/helena-640.webp',
+          alt: 'Kotka Helena patrząca prosto w obiektyw',
+          width: 640,
+          height: 1138,
+        },
+        {
+          src: '/optimized/cats/zmorek-640.webp',
+          alt: 'Kot zmorek wyglądający z kartonu',
+          width: 640,
+          height: 1138,
+        },
       ],
       items: [
         { name: 'Espresso / doppio', price: '9 / 12 zł', details: '30 / 60 ml' },
@@ -105,24 +124,39 @@ export class App {
         {
           name: 'Syropy do kawy',
           price: '3 zł',
-          details: 'karmel, słony karmel, wanilia, kokos, banan, amaretto, tiramisu'
+          details: 'karmel, słony karmel, wanilia, kokos, banan, amaretto, tiramisu',
         },
-        { name: 'Mleko bez laktozy / owsiane', price: '3 zł' }
-      ]
+        { name: 'Mleko bez laktozy / owsiane', price: '3 zł' },
+      ],
     },
     tea: {
       title: 'Herbaty',
       subtitle: 'Rozgrzewające i klasyczne',
       gallery: [
-        { src: '/cats/diuna.jpg', alt: 'Kotka diuna odpoczywająca przy oknie' },
-        { src: '/cats/alex-ada.jpg', alt: 'Alex i Ada wtuleni obok siebie' },
-        { src: '/cats/helena.jpg', alt: 'Kotka Helena w spokojnym portrecie' }
+        {
+          src: '/optimized/cats/diuna-640.webp',
+          alt: 'Kotka diuna odpoczywająca przy oknie',
+          width: 640,
+          height: 1138,
+        },
+        {
+          src: '/optimized/cats/alex-ada-640.webp',
+          alt: 'Alex i Ada wtuleni obok siebie',
+          width: 640,
+          height: 1138,
+        },
+        {
+          src: '/optimized/cats/helena-640.webp',
+          alt: 'Kotka Helena w spokojnym portrecie',
+          width: 640,
+          height: 1138,
+        },
       ],
       items: [
         {
           name: 'Dilmah',
           price: '9 zł',
-          details: 'ceylon, earl grey, english breakfast, zielona, porzeczkowa, malinowa i inne'
+          details: 'ceylon, earl grey, english breakfast, zielona, porzeczkowa, malinowa i inne',
         },
         { name: 'Herbata z mlekiem', price: '10 zł' },
         { name: 'Matcha latte', price: '20 zł' },
@@ -130,75 +164,110 @@ export class App {
         { name: 'Wulkan energii', price: '15 zł' },
         { name: 'Dotyk anioła', price: '15 zł' },
         { name: 'Relax', price: '15 zł' },
-        { name: 'Leśny sen', price: '15 zł' }
-      ]
+        { name: 'Leśny sen', price: '15 zł' },
+      ],
     },
     food: {
       title: 'Coś na większy głód',
       subtitle: 'Wytrawne menu',
       gallery: [
-        { src: '/cats/fafel-felka.jpg', alt: 'Fafel i felka odpoczywający razem' },
-        { src: '/cats/cynamon.jpg', alt: 'Cynamon z bliska na tle kawiarni' },
-        { src: '/cats/diuna.jpg', alt: 'Diuna w bocznym profilu przy oknie' }
+        {
+          src: '/optimized/cats/fafel-felka-640.webp',
+          alt: 'Fafel i felka odpoczywający razem',
+          width: 640,
+          height: 1138,
+        },
+        {
+          src: '/optimized/cats/cynamon-640.webp',
+          alt: 'Cynamon z bliska na tle kawiarni',
+          width: 640,
+          height: 852,
+        },
+        {
+          src: '/optimized/cats/diuna-640.webp',
+          alt: 'Diuna w bocznym profilu przy oknie',
+          width: 640,
+          height: 1138,
+        },
       ],
       items: [
         { name: 'Tosty klasyczne', price: '18 zł', details: 'ser, szynka, papryka, ketchup' },
         {
           name: 'Tosty meksykańskie',
           price: '19,5 zł',
-          details: 'kurczak, kukurydza, fasola, sos sriracha mayo'
+          details: 'kurczak, kukurydza, fasola, sos sriracha mayo',
         },
         {
           name: 'Tosty wegańskie',
           price: '19,5 zł',
-          details: 'pasztet warzywny, pomidorki koktajlowe, sos barbecue'
+          details: 'pasztet warzywny, pomidorki koktajlowe, sos barbecue',
         },
         {
           name: 'Wrap z kurczakiem',
           price: '29,5 zł',
-          details: 'kurczak, awokado, papryka, mix sałat, sos musztardowo-miodowy'
+          details: 'kurczak, awokado, papryka, mix sałat, sos musztardowo-miodowy',
         },
         {
           name: 'Wrap z wieprzowiną',
           price: '29,5 zł',
-          details: 'wieprzowina, kukurydza, fasola, mix sałat, sos barbecue'
+          details: 'wieprzowina, kukurydza, fasola, mix sałat, sos barbecue',
         },
         {
           name: 'Wrap wegański',
           price: '29,5 zł',
-          details: 'warzywa do wyboru, mix sałat, sos sriracha lub barbecue'
-        }
-      ]
+          details: 'warzywa do wyboru, mix sałat, sos sriracha lub barbecue',
+        },
+      ],
     },
     cold: {
       title: 'Shakes, smoothie i inne napoje',
       subtitle: 'Na zimno',
       gallery: [
-        { src: '/cats/zmorek.jpg', alt: 'Kot zmorek wychylający się z pudełka' },
-        { src: '/cats/alex-ada.jpg', alt: 'Alex i Ada na wspólnym zdjęciu' },
-        { src: '/cats/cynamon.jpg', alt: 'Cynamon patrzący prosto w obiektyw' }
+        {
+          src: '/optimized/cats/zmorek-640.webp',
+          alt: 'Kot zmorek wychylający się z pudełka',
+          width: 640,
+          height: 1138,
+        },
+        {
+          src: '/optimized/cats/alex-ada-640.webp',
+          alt: 'Alex i Ada na wspólnym zdjęciu',
+          width: 640,
+          height: 1138,
+        },
+        {
+          src: '/optimized/cats/cynamon-640.webp',
+          alt: 'Cynamon patrzący prosto w obiektyw',
+          width: 640,
+          height: 852,
+        },
       ],
       items: [
         {
           name: 'Shakes',
           price: '16 zł',
-          details: 'waniliowy, czekoladowy, truskawkowy, jabłko i banan, gruszka i melon, oreo'
+          details: 'waniliowy, czekoladowy, truskawkowy, jabłko i banan, gruszka i melon, oreo',
         },
-        { name: 'Smoothie owocowe', price: '18 zł', details: 'mango lassi, mangomania, mango truskawka' },
+        {
+          name: 'Smoothie owocowe',
+          price: '18 zł',
+          details: 'mango lassi, mangomania, mango truskawka',
+        },
         {
           name: 'Smoothie klasyczne',
           price: '18 zł',
-          details: 'zdrowy szpinak, energiczny szpinak, czuję miętę, niezły ananas'
+          details: 'zdrowy szpinak, energiczny szpinak, czuję miętę, niezły ananas',
         },
         {
           name: 'Smoothie deserowe',
           price: '18 zł',
-          details: 'nie fit, zmysłowe chilli, truskawka i banan, truskawka i kiwi, truskawka i mięta'
+          details:
+            'nie fit, zmysłowe chilli, truskawka i banan, truskawka i kiwi, truskawka i mięta',
         },
         { name: 'Woda / Coca-Cola / Sprite / Fanta / Nestea / soki Tymbark', price: '8 zł' },
-        { name: 'Świeżo wyciskany sok z pomarańczy', price: '18 zł' }
-      ]
-    }
+        { name: 'Świeżo wyciskany sok z pomarańczy', price: '18 zł' },
+      ],
+    },
   };
 
   readonly seasonalMenuSections: MenuSection[] = [
@@ -206,34 +275,49 @@ export class App {
       title: 'Aktualne menu sezonowe',
       subtitle: '4 wiosenne propozycje',
       gallery: [
-        { src: '/cats/helena.jpg', alt: 'Kotka Helena patrząca spokojnie w obiektyw' },
-        { src: '/cats/diuna.jpg', alt: 'Kotka diuna wypoczywająca przy oknie' },
-        { src: '/cats/fafel-felka.jpg', alt: 'Fafel i felka odpoczywający obok siebie' }
+        {
+          src: '/optimized/cats/helena-640.webp',
+          alt: 'Kotka Helena patrząca spokojnie w obiektyw',
+          width: 640,
+          height: 1138,
+        },
+        {
+          src: '/optimized/cats/diuna-640.webp',
+          alt: 'Kotka diuna wypoczywająca przy oknie',
+          width: 640,
+          height: 1138,
+        },
+        {
+          src: '/optimized/cats/fafel-felka-640.webp',
+          alt: 'Fafel i felka odpoczywający obok siebie',
+          width: 640,
+          height: 1138,
+        },
       ],
       items: [
         {
           name: 'Lemoniada fiołkowa',
           price: '18 zł',
-          details: '450 ml • świeżo wyciskany sok z cytryny, owoce i syrop fiołkowy'
+          details: '450 ml • świeżo wyciskany sok z cytryny, owoce i syrop fiołkowy',
         },
         {
           name: 'Sakura rooibos',
           price: '18 zł',
-          details: '450 ml • herbata rooibos z syropem z kwiatu wiśni, także w wersji na zimno'
+          details: '450 ml • herbata rooibos z syropem z kwiatu wiśni, także w wersji na zimno',
         },
         {
           name: 'Różane frappe',
           price: '24 zł',
-          details: '450 ml • mrożona kawa z mlekiem, lodami, syropem różanym i bitą śmietaną'
+          details: '450 ml • mrożona kawa z mlekiem, lodami, syropem różanym i bitą śmietaną',
         },
         {
           name: 'Tosty „Jajeczne”',
           price: '24 zł',
           details:
-            'chrupiący chlebek z pastą a’la jajeczną na bazie tofu, ze szczypiorkiem i sałatką z warzyw z sosem balsamicznym • vegan'
-        }
-      ]
-    }
+            'chrupiący chlebek z pastą a’la jajeczną na bazie tofu, ze szczypiorkiem i sałatką z warzyw z sosem balsamicznym • vegan',
+        },
+      ],
+    },
   ];
 
   readonly catCards: CatCard[] = [
@@ -242,67 +326,79 @@ export class App {
       trait: 'Pan wejścia z charakterem',
       description:
         'Patrzy prosto, podchodzi bez wahania i od pierwszej chwili daje znać, że w tej kawiarni ma swoje zasady.',
-      image: '/cats/cynamon.jpg',
-      alt: 'Rudy kot cynamon stojący na drewnianym blacie'
+      image: '/optimized/cats/cynamon-640.webp',
+      alt: 'Rudy kot cynamon stojący na drewnianym blacie',
+      imageWidth: 640,
+      imageHeight: 852,
     },
     {
       name: 'fafel & felka',
       trait: 'Duet od miękkich miejsc',
       description:
         'Najlepiej czują się tam, gdzie jest wygodnie, blisko siebie i wystarczająco spokojnie, żeby po prostu poleżeć.',
-      image: '/cats/fafel-felka.jpg',
-      alt: 'Fafel i felka odpoczywający razem w przytulnym legowisku'
+      image: '/optimized/cats/fafel-felka-640.webp',
+      alt: 'Fafel i felka odpoczywający razem w przytulnym legowisku',
+      imageWidth: 640,
+      imageHeight: 1138,
     },
     {
       name: 'Alex & Ada',
       trait: 'Nierozłączni w kadrze',
       description:
         'Najchętniej pokazują się razem, wtuleni i spokojni, jakby najlepiej wiedzieli, że dobre miejsce poznaje się po tym, z kim można w nim odpocząć.',
-      image: '/cats/alex-ada.jpg',
-      alt: 'Alex i Ada odpoczywający razem w promieniach światła'
+      image: '/optimized/cats/alex-ada-640.webp',
+      alt: 'Alex i Ada odpoczywający razem w promieniach światła',
+      imageWidth: 640,
+      imageHeight: 1138,
     },
     {
       name: 'diuna',
       trait: 'Królowa okiennego światła',
       description:
         'Lubi półcień, miękkie światło i taki punkt obserwacyjny, z którego można widzieć wszystko bez zbędnego zamieszania.',
-      image: '/cats/diuna.jpg',
-      alt: 'Kotka diuna w bocznym profilu przy oknie'
+      image: '/optimized/cats/diuna-640.webp',
+      alt: 'Kotka diuna w bocznym profilu przy oknie',
+      imageWidth: 640,
+      imageHeight: 1138,
     },
     {
       name: 'Helena',
       trait: 'Spojrzenie, które zatrzymuje',
       description:
         'Jest w niej coś bardzo spokojnego i bardzo uważnego, jakby potrafiła sprawić, że każdy odruchowo zwalnia krok.',
-      image: '/cats/helena.jpg',
-      alt: 'Kotka Helena patrząca prosto w obiektyw'
+      image: '/optimized/cats/helena-640.webp',
+      alt: 'Kotka Helena patrząca prosto w obiektyw',
+      imageWidth: 640,
+      imageHeight: 1138,
     },
     {
       name: 'zmorek',
       trait: 'Mały odkrywca',
       description:
         'Chętnie zagląda w pudełka, na oparcia i w każde miejsce, które wygląda jak początek nowej przygody.',
-      image: '/cats/zmorek.jpg',
-      alt: 'Kot zmorek wyglądający z kartonu'
-    }
+      image: '/optimized/cats/zmorek-640.webp',
+      alt: 'Kot zmorek wyglądający z kartonu',
+      imageWidth: 640,
+      imageHeight: 1138,
+    },
   ];
 
   readonly moments: MomentCard[] = [
     {
       title: 'Poranki z książką',
       description:
-        'Najcichsze godziny dnia, miękkie światło i mruczenie w tle. Idealny moment na czytanie, pracę i spokojną kawę.'
+        'Najcichsze godziny dnia, miękkie światło i mruczenie w tle. Idealny moment na czytanie, pracę i spokojną kawę.',
     },
     {
       title: 'Popołudnia z planszówkami',
       description:
-        'Przy stolikach pojawiają się gry, deski do dzielenia się i dłuższe rozmowy, które kończą się o wiele za szybko.'
+        'Przy stolikach pojawiają się gry, deski do dzielenia się i dłuższe rozmowy, które kończą się o wiele za szybko.',
     },
     {
       title: 'Kameralne rezerwacje',
       description:
-        'Małe spotkania, urodziny i wizyty grupowe mają tu własny rytm: bez zgiełku, za to z dobrą kawą i kocim klimatem.'
-    }
+        'Małe spotkania, urodziny i wizyty grupowe mają tu własny rytm: bez zgiełku, za to z dobrą kawą i kocim klimatem.',
+    },
   ];
 
   get activeMenuSections(): MenuSection[] {

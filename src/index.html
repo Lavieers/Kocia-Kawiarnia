@@ -1,17 +1,922 @@
 <!doctype html>
 <html lang="pl">
-<head>
-  <meta charset="utf-8">
-  <title>Mrau Cafe | Kocia kawiarnia w Lublinie</title>
-  <base href="/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta
-    name="description"
-    content="Mrau Cafe to przytulna kocia kawiarnia z aromatyczną kawą, spokojną atmosferą i kocimi rezydentami."
-  >
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-</head>
-<body>
-  <app-root></app-root>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <title>Mrau Cafe | Kocia kawiarnia w Lublinie</title>
+    <base href="/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Mrau Cafe to przytulna kocia kawiarnia z aromatyczną kawą, spokojną atmosferą i kocimi rezydentami."
+    />
+    <link
+      rel="preload"
+      as="image"
+      href="/optimized/cats/cynamon-960.webp"
+      imagesrcset="/optimized/cats/cynamon-640.webp 640w, /optimized/cats/cynamon-960.webp 960w"
+      imagesizes="(max-width: 1024px) calc(100vw - 3rem), 38vw"
+      fetchpriority="high"
+    />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Przejdź do treści</a>
+
+    <header class="site-header">
+      <div class="shell site-header__inner">
+        <a class="brand" href="#start" aria-label="Mrau Cafe - początek strony">
+          <img
+            class="brand__logo"
+            src="/logo.jpg"
+            alt="Logo Mrau Cafe"
+            width="183"
+            height="183"
+            decoding="async"
+          />
+          <span class="brand__text">
+            <strong>Mrau Cafe</strong>
+            <span>Kocia kawiarnia w sercu miasta</span>
+          </span>
+        </a>
+
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="primary-navigation"
+          aria-label="Otwórz lub zamknij menu nawigacyjne"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav class="primary-nav" id="primary-navigation" aria-label="Nawigacja główna">
+          <a href="#start">Start</a>
+          <a href="#o-nas">O kawiarni</a>
+          <a href="#wizyta">Wizyta</a>
+          <a href="#menu">Menu</a>
+          <a href="#koty">Koty</a>
+          <a href="#wydarzenia">Chwile u nas</a>
+          <a href="#kontakt">Kontakt</a>
+          <a class="primary-nav__cta" href="#kontakt">Zarezerwuj wizytę</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <section class="hero" id="start">
+        <div class="shell hero__grid">
+          <article class="hero__copy">
+            <p class="eyebrow">Kawa, spokój i mruczenie w tle</p>
+            <h1>Wpadnij na chwilę. Zostań na dłużej.</h1>
+            <p class="hero__lead">
+              W Mrau Cafe kawa spotyka się z miękkim światłem, wygodnymi kanapami i kocimi
+              rezydentami, którzy najlepiej wiedzą, jak zwolnić tempo dnia. To przestrzeń na
+              spokojny poranek, rozmowę i wizytę, do której chce się wrócić.
+            </p>
+
+            <div class="hero__actions">
+              <a class="button button--primary" href="#menu">Zobacz menu</a>
+              <a class="button button--secondary" href="#koty">Poznaj nasze koty</a>
+            </div>
+
+            <ul class="hero__facts" aria-label="Najważniejsze atuty kawiarni">
+              <li>idealne miejsce na kawę i leniwe popołudnie</li>
+              <li>koci rezydenci i domowy klimat</li>
+            </ul>
+          </article>
+
+          <aside class="hero__visual" aria-label="Galeria otwierająca">
+            <div class="hero__card hero__card--large">
+              <img
+                src="/optimized/cats/cynamon-640.webp"
+                srcset="
+                  /optimized/cats/cynamon-640.webp 640w,
+                  /optimized/cats/cynamon-960.webp 960w
+                "
+                sizes="(max-width: 1024px) calc(100vw - 3rem), 38vw"
+                alt="Rudy kot cynamon stojący na drewnianym blacie w kawiarni"
+                width="640"
+                height="852"
+                fetchpriority="high"
+                loading="eager"
+                decoding="async"
+              />
+            </div>
+            <div class="hero__stack">
+              <div class="hero__card">
+                <img
+                  src="/optimized/kawa-640.webp"
+                  alt="Kawa podana gościom w Mrau Cafe"
+                  width="640"
+                  height="640"
+                  loading="eager"
+                  decoding="async"
+                />
+              </div>
+              <div class="hero__note">
+                <strong>Tu wszystko zwalnia</strong>
+                <p>Usiądź wygodnie, zamów coś dobrego i pozwól, by rytm wizyty wyznaczyły koty.</p>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section section--about" id="o-nas">
+        <div class="shell about">
+          <article class="section-copy">
+            <p class="eyebrow">O kawiarni</p>
+            <h2>Mrau Cafe to jedyna kocia kawiarnia w Lublinie.</h2>
+            <p>
+              Mrau Cafe łączy kameralną kawiarnię z domową atmosferą i codzienną obecnością kocich
+              rezydentów. To miejsce na spokojny poranek, rozmowę, książkę albo chwilę oddechu w
+              towarzystwie kotów, z których każdy ma własny charakter i własne ulubione miejsce w
+              lokalu.
+            </p>
+          </article>
+
+          <div class="about__panel">
+            <img
+              src="/optimized/sezon-640.webp"
+              alt="Przytulne wnętrze kociej kawiarni z ciepłym światłem"
+              width="640"
+              height="640"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="wizyta" aria-labelledby="visit-title">
+        <div class="shell">
+          <div class="section-heading">
+            <p class="eyebrow">Jak wygląda wizyta</p>
+            <h2 id="visit-title">W Mrau Cafe wszystko dzieje się bez pośpiechu.</h2>
+          </div>
+
+          <div class="benefits-grid">
+            <article class="info-card">
+              <h3>Spokojna strefa spotkań</h3>
+              <p>
+                Wnętrze zostało zaplanowane tak, by łatwo znaleźć miejsce na rozmowę, randkę albo
+                spokojną godzinę z książką.
+              </p>
+            </article>
+            <article class="info-card">
+              <h3>Koty na pierwszym planie</h3>
+              <p>
+                Każdy rezydent ma własne tempo. Goście poznają koty naturalnie, bez pośpiechu i bez
+                naruszania ich komfortu.
+              </p>
+            </article>
+            <article class="info-card">
+              <h3>Małe przyjemności</h3>
+              <p>
+                Aromatyczna kawa, lekkie przekąski i miękkie światło budują atmosferę, do której
+                chce się wracać.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--menu" id="menu">
+        <div class="shell">
+          <div class="section-heading">
+            <p class="eyebrow">Menu</p>
+            <h2>Spokojna kawa, coś dobrego<br />i kilka sezonowych przyjemności.</h2>
+          </div>
+
+          <div class="menu-toolbar">
+            <div class="menu-switch" role="group" aria-label="Przełączanie rodzaju menu">
+              <button
+                class="menu-switch__button menu-switch__button--active"
+                type="button"
+                data-menu-tab="fixed"
+                aria-pressed="true"
+              >
+                Menu stałe
+              </button>
+              <button
+                class="menu-switch__button"
+                type="button"
+                data-menu-tab="seasonal"
+                aria-pressed="false"
+              >
+                Menu sezonowe
+              </button>
+            </div>
+
+            <p class="menu-toolbar__hint" data-tab-hint="fixed">
+              To pozycje, które znajdziesz u nas niezależnie od pory roku.
+            </p>
+            <p class="menu-toolbar__hint" data-tab-hint="seasonal" hidden>
+              W tej zakładce znajdziesz wyłącznie 4 aktualne pozycje z menu sezonowego.
+            </p>
+          </div>
+
+          <div class="menu-categories" role="group" aria-label="Kategorie menu stałego">
+            <button
+              class="menu-categories__button menu-categories__button--active"
+              type="button"
+              data-menu-category="coffee"
+              aria-pressed="true"
+            >
+              Kawy i dodatki
+            </button>
+            <button
+              class="menu-categories__button"
+              type="button"
+              data-menu-category="tea"
+              aria-pressed="false"
+            >
+              Herbaty
+            </button>
+            <button
+              class="menu-categories__button"
+              type="button"
+              data-menu-category="food"
+              aria-pressed="false"
+            >
+              Coś na większy głód
+            </button>
+            <button
+              class="menu-categories__button"
+              type="button"
+              data-menu-category="cold"
+              aria-pressed="false"
+            >
+              Shakes, smoothie i inne napoje
+            </button>
+          </div>
+
+          <div class="menu-grid menu-grid--detailed">
+            <article class="menu-panel" data-panel="fixed-coffee">
+              <div class="menu-panel__media" aria-label="Zdjęcia kotów w menu">
+                <div class="menu-gallery">
+                  <div class="menu-gallery__item">
+                    <img
+                      src="/optimized/cats/cynamon-640.webp"
+                      alt="Rudy kot cynamon stojący na blacie w kawiarni"
+                      width="640"
+                      height="852"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </div>
+                  <div class="menu-gallery__item">
+                    <img
+                      src="/optimized/cats/helena-640.webp"
+                      alt="Kotka Helena patrząca prosto w obiektyw"
+                      width="640"
+                      height="1138"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </div>
+                  <div class="menu-gallery__item">
+                    <img
+                      src="/optimized/cats/zmorek-640.webp"
+                      alt="Kot zmorek wyglądający z kartonu"
+                      width="640"
+                      height="1138"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="menu-panel__body">
+                <p class="menu-panel__subtitle">Stałe klasyki</p>
+                <h3>Kawy i dodatki</h3>
+                <ul class="menu-list" aria-label="Kawy i dodatki">
+                  <li class="menu-list__item">
+                    <div class="menu-list__topline">
+                      <strong>Espresso / doppio</strong><span>9 / 12 zł</span>
+                    </div>
+                    <p>30 / 60 ml</p>
+                  </li>
+                  <li class="menu-list__item">
+                    <div class="menu-list__topline">
+                      <strong>Flat white</strong><span>14 zł</span>
+                    </div>
+                    <p>200 ml</p>
+                  </li>
+                  <li class="menu-list__item">
+                    <div class="menu-list__topline">
+                      <strong>Americano małe / duże</strong><span>9 / 12 zł</span>
+                    </div>
+                    <p>200 / 300 ml</p>
+                  </li>
+                  <li class="menu-list__item">
+                    <div class="menu-list__topline">
+                      <strong>Cappuccino małe / duże</strong><span>13 / 15 zł</span>
+                    </div>
+                    <p>200 / 300 ml</p>
+                  </li>
+                  <li class="menu-list__item">
+                    <div class="menu-list__topline">
+                      <strong>Caffe latte</strong><span>16 zł</span>
+                    </div>
+                    <p>450 ml</p>
+                  </li>
+                  <li class="menu-list__item">
+                    <div class="menu-list__topline"><strong>Mokka</strong><span>18 zł</span></div>
+                    <p>450 ml</p>
+                  </li>
+                  <li class="menu-list__item">
+                    <div class="menu-list__topline"><strong>Frappe</strong><span>18 zł</span></div>
+                    <p>450 ml</p>
+                  </li>
+                  <li class="menu-list__item">
+                    <div class="menu-list__topline">
+                      <strong>Kawa zielona</strong><span>12 zł</span>
+                    </div>
+                    <p>solo, z wanilią, cynamonem lub kokosem</p>
+                  </li>
+                  <li class="menu-list__item">
+                    <div class="menu-list__topline">
+                      <strong>Syropy do kawy</strong><span>3 zł</span>
+                    </div>
+                    <p>karmel, słony karmel, wanilia, kokos, banan, amaretto, tiramisu</p>
+                  </li>
+                  <li class="menu-list__item">
+                    <div class="menu-list__topline">
+                      <strong>Mleko bez laktozy / owsiane</strong><span>3 zł</span>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="menu-panel" data-panel="fixed-tea" hidden>
+              <div class="menu-panel__media" aria-label="Zdjęcia kotów w menu">
+                <div class="menu-gallery">
+                  <div class="menu-gallery__item">
+                    <img
+                      src="/optimized/cats/diuna-640.webp"
+                      alt="Kotka diuna odpoczywająca przy oknie"
+                      width="640"
+                      height="1138"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </div>
+                  <div class="menu-gallery__item">
+                    <img
+                      src="/optimized/cats/alex-ada-640.webp"
+                      alt="Alex i Ada wtuleni obok siebie"
+                      width="640"
+                      height="1138"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </div>
+                  <div class="menu-gallery__item">
+                    <img
+                      src="/optimized/cats/helena-640.webp"
+                      alt="Kotka Helena w spokojnym portrecie"
+                      width="640"
+                      height="1138"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="menu-panel__body">
+                <p class="menu-panel__subtitle">Rozgrzewające i klasyczne</p>
+                <h3>Herbaty</h3>
+                <ul class="menu-list" aria-label="Herbaty">
+                  <li class="menu-list__item">
+                    <div class="menu-list__topline"><strong>Dilmah</strong><span>9 zł</span></div>
+                    <p>
+                      ceylon, earl grey, english breakfast, zielona, porzeczkowa, malinowa i inne
+                    </p>
+                  </li>
+                  <li class="menu-list__item">
+                    <div class="menu-list__topline">
+                      <strong>Herbata z mlekiem</strong><span>10 zł</span>
+                    </div>
+                  </li>
+                  <li class="menu-list__item">
+                    <div class="menu-list__topline">
+                      <strong>Matcha latte</strong><span>20 zł</span>
+                    </div>
+                  </li>
+                  <li class="menu-list__item">
+                    <div class="menu-list__topline">
+                      <strong>Ceylon / biała / zielona / blue earl grey</strong><span>13 zł</span>
+                    </div>
+                  </li>
+                  <li class="menu-list__item">
+                    <div class="menu-list__topline">
+                      <strong>Wulkan energii</strong><span>15 zł</span>
+                    </div>
+                  </li>
+                  <li class="menu-list__item">
+                    <div class="menu-list__topline">
+                      <strong>Dotyk anioła</strong><span>15 zł</span>
+                    </div>
+                  </li>
+                  <li class="menu-list__item">
+                    <div class="menu-list__topline"><strong>Relax</strong><span>15 zł</span></div>
+                  </li>
+                  <li class="menu-list__item">
+                    <div class="menu-list__topline">
+                      <strong>Leśny sen</strong><span>15 zł</span>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="menu-panel" data-panel="fixed-food" hidden>
+              <div class="menu-panel__media" aria-label="Zdjęcia kotów w menu">
+                <div class="menu-gallery">
+                  <div class="menu-gallery__item">
+                    <img
+                      src="/optimized/cats/fafel-felka-640.webp"
+                      alt="Fafel i felka odpoczywający razem"
+                      width="640"
+                      height="1138"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </div>
+                  <div class="menu-gallery__item">
+                    <img
+                      src="/optimized/cats/cynamon-640.webp"
+                      alt="Cynamon z bliska na tle kawiarni"
+                      width="640"
+                      height="852"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </div>
+                  <div class="menu-gallery__item">
+                    <img
+                      src="/optimized/cats/diuna-640.webp"
+                      alt="Diuna w bocznym profilu przy oknie"
+                      width="640"
+                      height="1138"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="menu-panel__body">
+                <p class="menu-panel__subtitle">Wytrawne menu</p>
+                <h3>Coś na większy głód</h3>
+                <ul class="menu-list" aria-label="Coś na większy głód">
+                  <li class="menu-list__item">
+                    <div class="menu-list__topline">
+                      <strong>Tosty klasyczne</strong><span>18 zł</span>
+                    </div>
+                    <p>ser, szynka, papryka, ketchup</p>
+                  </li>
+                  <li class="menu-list__item">
+                    <div class="menu-list__topline">
+                      <strong>Tosty meksykańskie</strong><span>19,5 zł</span>
+                    </div>
+                    <p>kurczak, kukurydza, fasola, sos sriracha mayo</p>
+                  </li>
+                  <li class="menu-list__item">
+                    <div class="menu-list__topline">
+                      <strong>Tosty wegańskie</strong><span>19,5 zł</span>
+                    </div>
+                    <p>pasztet warzywny, pomidorki koktajlowe, sos barbecue</p>
+                  </li>
+                  <li class="menu-list__item">
+                    <div class="menu-list__topline">
+                      <strong>Wrap z kurczakiem</strong><span>29,5 zł</span>
+                    </div>
+                    <p>kurczak, awokado, papryka, mix sałat, sos musztardowo-miodowy</p>
+                  </li>
+                  <li class="menu-list__item">
+                    <div class="menu-list__topline">
+                      <strong>Wrap z wieprzowiną</strong><span>29,5 zł</span>
+                    </div>
+                    <p>wieprzowina, kukurydza, fasola, mix sałat, sos barbecue</p>
+                  </li>
+                  <li class="menu-list__item">
+                    <div class="menu-list__topline">
+                      <strong>Wrap wegański</strong><span>29,5 zł</span>
+                    </div>
+                    <p>warzywa do wyboru, mix sałat, sos sriracha lub barbecue</p>
+                  </li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="menu-panel" data-panel="fixed-cold" hidden>
+              <div class="menu-panel__media" aria-label="Zdjęcia kotów w menu">
+                <div class="menu-gallery">
+                  <div class="menu-gallery__item">
+                    <img
+                      src="/optimized/cats/zmorek-640.webp"
+                      alt="Kot zmorek wychylający się z pudełka"
+                      width="640"
+                      height="1138"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </div>
+                  <div class="menu-gallery__item">
+                    <img
+                      src="/optimized/cats/alex-ada-640.webp"
+                      alt="Alex i Ada na wspólnym zdjęciu"
+                      width="640"
+                      height="1138"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </div>
+                  <div class="menu-gallery__item">
+                    <img
+                      src="/optimized/cats/cynamon-640.webp"
+                      alt="Cynamon patrzący prosto w obiektyw"
+                      width="640"
+                      height="852"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="menu-panel__body">
+                <p class="menu-panel__subtitle">Na zimno</p>
+                <h3>Shakes, smoothie i inne napoje</h3>
+                <ul class="menu-list" aria-label="Shakes, smoothie i inne napoje">
+                  <li class="menu-list__item">
+                    <div class="menu-list__topline"><strong>Shakes</strong><span>16 zł</span></div>
+                    <p>
+                      waniliowy, czekoladowy, truskawkowy, jabłko i banan, gruszka i melon, oreo
+                    </p>
+                  </li>
+                  <li class="menu-list__item">
+                    <div class="menu-list__topline">
+                      <strong>Smoothie owocowe</strong><span>18 zł</span>
+                    </div>
+                    <p>mango lassi, mangomania, mango truskawka</p>
+                  </li>
+                  <li class="menu-list__item">
+                    <div class="menu-list__topline">
+                      <strong>Smoothie klasyczne</strong><span>18 zł</span>
+                    </div>
+                    <p>zdrowy szpinak, energiczny szpinak, czuję miętę, niezły ananas</p>
+                  </li>
+                  <li class="menu-list__item">
+                    <div class="menu-list__topline">
+                      <strong>Smoothie deserowe</strong><span>18 zł</span>
+                    </div>
+                    <p>
+                      nie fit, zmysłowe chilli, truskawka i banan, truskawka i kiwi, truskawka i
+                      mięta
+                    </p>
+                  </li>
+                  <li class="menu-list__item">
+                    <div class="menu-list__topline">
+                      <strong>Woda / Coca-Cola / Sprite / Fanta / Nestea / soki Tymbark</strong
+                      ><span>8 zł</span>
+                    </div>
+                  </li>
+                  <li class="menu-list__item">
+                    <div class="menu-list__topline">
+                      <strong>Świeżo wyciskany sok z pomarańczy</strong><span>18 zł</span>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="menu-panel" data-panel="seasonal" hidden>
+              <div class="menu-panel__media" aria-label="Zdjęcia kotów w menu">
+                <div class="menu-gallery">
+                  <div class="menu-gallery__item">
+                    <img
+                      src="/optimized/cats/helena-640.webp"
+                      alt="Kotka Helena patrząca spokojnie w obiektyw"
+                      width="640"
+                      height="1138"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </div>
+                  <div class="menu-gallery__item">
+                    <img
+                      src="/optimized/cats/diuna-640.webp"
+                      alt="Kotka diuna wypoczywająca przy oknie"
+                      width="640"
+                      height="1138"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </div>
+                  <div class="menu-gallery__item">
+                    <img
+                      src="/optimized/cats/fafel-felka-640.webp"
+                      alt="Fafel i felka odpoczywający obok siebie"
+                      width="640"
+                      height="1138"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="menu-panel__body">
+                <p class="menu-panel__subtitle">4 wiosenne propozycje</p>
+                <h3>Aktualne menu sezonowe</h3>
+                <ul class="menu-list" aria-label="Aktualne menu sezonowe">
+                  <li class="menu-list__item">
+                    <div class="menu-list__topline">
+                      <strong>Lemoniada fiołkowa</strong><span>18 zł</span>
+                    </div>
+                    <p>450 ml • świeżo wyciskany sok z cytryny, owoce i syrop fiołkowy</p>
+                  </li>
+                  <li class="menu-list__item">
+                    <div class="menu-list__topline">
+                      <strong>Sakura rooibos</strong><span>18 zł</span>
+                    </div>
+                    <p>
+                      450 ml • herbata rooibos z syropem z kwiatu wiśni, także w wersji na zimno
+                    </p>
+                  </li>
+                  <li class="menu-list__item">
+                    <div class="menu-list__topline">
+                      <strong>Różane frappe</strong><span>24 zł</span>
+                    </div>
+                    <p>450 ml • mrożona kawa z mlekiem, lodami, syropem różanym i bitą śmietaną</p>
+                  </li>
+                  <li class="menu-list__item">
+                    <div class="menu-list__topline">
+                      <strong>Tosty „Jajeczne”</strong><span>24 zł</span>
+                    </div>
+                    <p>
+                      chrupiący chlebek z pastą a’la jajeczną na bazie tofu, ze szczypiorkiem i
+                      sałatką z warzyw z sosem balsamicznym • vegan
+                    </p>
+                  </li>
+                </ul>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--cats" id="koty">
+        <div class="shell">
+          <div class="section-heading">
+            <p class="eyebrow">Nasi rezydenci</p>
+            <h2>Poznaj koty, które tworzą codzienny rytm Mrau Cafe.</h2>
+          </div>
+
+          <div class="cats-grid">
+            <article class="cat-card">
+              <div class="cat-card__media">
+                <img
+                  src="/optimized/cats/cynamon-640.webp"
+                  alt="Rudy kot cynamon stojący na drewnianym blacie"
+                  width="640"
+                  height="852"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <div class="cat-card__nameplate"><h3>cynamon</h3></div>
+              </div>
+              <div class="cat-card__body">
+                <p class="cat-card__role">Pan wejścia z charakterem</p>
+                <p>
+                  Patrzy prosto, podchodzi bez wahania i od pierwszej chwili daje znać, że w tej
+                  kawiarni ma swoje zasady.
+                </p>
+              </div>
+            </article>
+
+            <article class="cat-card">
+              <div class="cat-card__media">
+                <img
+                  src="/optimized/cats/fafel-felka-640.webp"
+                  alt="Fafel i felka odpoczywający razem w przytulnym legowisku"
+                  width="640"
+                  height="1138"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <div class="cat-card__nameplate"><h3>fafel &amp; felka</h3></div>
+              </div>
+              <div class="cat-card__body">
+                <p class="cat-card__role">Duet od miękkich miejsc</p>
+                <p>
+                  Najlepiej czują się tam, gdzie jest wygodnie, blisko siebie i wystarczająco
+                  spokojnie, żeby po prostu poleżeć.
+                </p>
+              </div>
+            </article>
+
+            <article class="cat-card">
+              <div class="cat-card__media">
+                <img
+                  src="/optimized/cats/alex-ada-640.webp"
+                  alt="Alex i Ada odpoczywający razem w promieniach światła"
+                  width="640"
+                  height="1138"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <div class="cat-card__nameplate"><h3>Alex &amp; Ada</h3></div>
+              </div>
+              <div class="cat-card__body">
+                <p class="cat-card__role">Nierozłączni w kadrze</p>
+                <p>
+                  Najchętniej pokazują się razem, wtuleni i spokojni, jakby najlepiej wiedzieli, że
+                  dobre miejsce poznaje się po tym, z kim można w nim odpocząć.
+                </p>
+              </div>
+            </article>
+
+            <article class="cat-card">
+              <div class="cat-card__media">
+                <img
+                  src="/optimized/cats/diuna-640.webp"
+                  alt="Kotka diuna w bocznym profilu przy oknie"
+                  width="640"
+                  height="1138"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <div class="cat-card__nameplate"><h3>diuna</h3></div>
+              </div>
+              <div class="cat-card__body">
+                <p class="cat-card__role">Królowa okiennego światła</p>
+                <p>
+                  Lubi półcień, miękkie światło i taki punkt obserwacyjny, z którego można widzieć
+                  wszystko bez zbędnego zamieszania.
+                </p>
+              </div>
+            </article>
+
+            <article class="cat-card">
+              <div class="cat-card__media">
+                <img
+                  src="/optimized/cats/helena-640.webp"
+                  alt="Kotka Helena patrząca prosto w obiektyw"
+                  width="640"
+                  height="1138"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <div class="cat-card__nameplate"><h3>Helena</h3></div>
+              </div>
+              <div class="cat-card__body">
+                <p class="cat-card__role">Spojrzenie, które zatrzymuje</p>
+                <p>
+                  Jest w niej coś bardzo spokojnego i bardzo uważnego, jakby potrafiła sprawić, że
+                  każdy odruchowo zwalnia krok.
+                </p>
+              </div>
+            </article>
+
+            <article class="cat-card">
+              <div class="cat-card__media">
+                <img
+                  src="/optimized/cats/zmorek-640.webp"
+                  alt="Kot zmorek wyglądający z kartonu"
+                  width="640"
+                  height="1138"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <div class="cat-card__nameplate"><h3>zmorek</h3></div>
+              </div>
+              <div class="cat-card__body">
+                <p class="cat-card__role">Mały odkrywca</p>
+                <p>
+                  Chętnie zagląda w pudełka, na oparcia i w każde miejsce, które wygląda jak
+                  początek nowej przygody.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="wydarzenia">
+        <div class="shell events">
+          <article class="section-copy">
+            <p class="eyebrow">Chwile w Mrau Cafe</p>
+            <h2>Najlepsze chwile w Mrau Cafe tworzą się zupełnie naturalnie.</h2>
+            <p>
+              Poranna kawa przy oknie, popołudniowa planszówka z przyjaciółmi, cichy czas z książką
+              albo krótka przerwa od miasta. Nasza kawiarnia została stworzona właśnie dla takich
+              momentów.
+            </p>
+          </article>
+
+          <div class="events__list">
+            <article class="event-card">
+              <h3>Poranki z książką</h3>
+              <p>
+                Najcichsze godziny dnia, miękkie światło i mruczenie w tle. Idealny moment na
+                czytanie, pracę i spokojną kawę.
+              </p>
+            </article>
+            <article class="event-card">
+              <h3>Popołudnia z planszówkami</h3>
+              <p>
+                Przy stolikach pojawiają się gry, deski do dzielenia się i dłuższe rozmowy, które
+                kończą się o wiele za szybko.
+              </p>
+            </article>
+            <article class="event-card">
+              <h3>Kameralne rezerwacje</h3>
+              <p>
+                Małe spotkania, urodziny i wizyty grupowe mają tu własny rytm: bez zgiełku, za to z
+                dobrą kawą i kocim klimatem.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--contact" id="kontakt">
+        <div class="shell contact">
+          <article class="section-copy">
+            <p class="eyebrow">Kontakt i rezerwacje</p>
+            <h2>Jeśli planujesz wizytę solo, z bliską osobą albo w małej grupie, napisz do nas.</h2>
+            <p>
+              Odpowiemy z propozycją terminu i pomożemy dobrać najlepszy moment na spokojną wizytę.
+              Rezerwacje grupowe realizujemy kameralnie, z myślą o komforcie naszych kotów.
+            </p>
+
+            <ul class="contact__details" aria-label="Dane kontaktowe">
+              <li>ul. Kocia 12, 20-001 Lublin</li>
+              <li>poniedziałek-piątek 10:00-20:00, weekend 10:00-21:00</li>
+              <li>kontakt@mraucafe.pl</li>
+              <li>małe grupy, spokojne spotkania i rezerwacje okolicznościowe</li>
+            </ul>
+          </article>
+
+          <form class="contact-form" novalidate>
+            <label>
+              Imię
+              <input
+                type="text"
+                name="name"
+                placeholder="Np. Marta"
+                required
+                autocomplete="given-name"
+              />
+            </label>
+            <label>
+              E-mail
+              <input
+                type="email"
+                name="email"
+                placeholder="twoj@email.pl"
+                required
+                autocomplete="email"
+              />
+            </label>
+            <label>
+              Termin wizyty
+              <input type="date" name="date" />
+            </label>
+            <label>
+              Wiadomość
+              <textarea
+                name="message"
+                rows="5"
+                placeholder="Napisz, czy planujesz spokojną wizytę, spotkanie z bliskimi czy rezerwację dla grupy."
+                required
+              ></textarea>
+            </label>
+            <button class="button button--primary button--full" type="submit">
+              Wyślij zapytanie
+            </button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell site-footer__inner">
+        <p>
+          Mrau Cafe © <span data-current-year>2026</span>. Kocia kawiarnia stworzona z myślą o
+          spokojnych chwilach i dobrym towarzystwie.
+        </p>
+        <a href="#start">Wróć na górę</a>
+      </div>
+    </footer>
+  </body>
 </html>

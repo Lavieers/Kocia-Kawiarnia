@@ -3,7 +3,14 @@
 <header class="site-header">
   <div class="shell site-header__inner">
     <a class="brand" href="#start" aria-label="Mrau Cafe - początek strony" (click)="closeMenu()">
-      <img class="brand__logo" src="/logo.jpg" alt="Logo Mrau Cafe">
+      <img
+        class="brand__logo"
+        src="/logo.jpg"
+        alt="Logo Mrau Cafe"
+        width="183"
+        height="183"
+        decoding="async"
+      />
       <span class="brand__text">
         <strong>Mrau Cafe</strong>
         <span>Kocia kawiarnia w sercu miasta</span>
@@ -63,11 +70,28 @@
 
       <aside class="hero__visual" aria-label="Galeria otwierająca">
         <div class="hero__card hero__card--large">
-          <img src="/cats/cynamon.jpg" alt="Rudy kot cynamon stojący na drewnianym blacie w kawiarni">
+          <img
+            src="/optimized/cats/cynamon-640.webp"
+            srcset="/optimized/cats/cynamon-640.webp 640w, /optimized/cats/cynamon-960.webp 960w"
+            sizes="(max-width: 1024px) calc(100vw - 3rem), 38vw"
+            alt="Rudy kot cynamon stojący na drewnianym blacie w kawiarni"
+            width="640"
+            height="852"
+            fetchpriority="high"
+            loading="eager"
+            decoding="async"
+          />
         </div>
         <div class="hero__stack">
           <div class="hero__card">
-            <img src="/kawa.jpg" alt="Kawa podana gościom w Mrau Cafe">
+            <img
+              src="/optimized/kawa-640.webp"
+              alt="Kawa podana gościom w Mrau Cafe"
+              width="640"
+              height="640"
+              loading="eager"
+              decoding="async"
+            />
           </div>
           <div class="hero__note">
             <strong>Tu wszystko zwalnia</strong>
@@ -84,14 +108,22 @@
         <p class="eyebrow">O kawiarni</p>
         <h2>Mrau Cafe to jedyna kocia kawiarnia w Lublinie.</h2>
         <p>
-          Mrau Cafe łączy kameralną kawiarnię z domową atmosferą i codzienną obecnością kocich rezydentów.
-          To miejsce na spokojny poranek, rozmowę, książkę albo chwilę oddechu w towarzystwie kotów,
-          z których każdy ma własny charakter i własne ulubione miejsce w lokalu.
+          Mrau Cafe łączy kameralną kawiarnię z domową atmosferą i codzienną obecnością kocich
+          rezydentów. To miejsce na spokojny poranek, rozmowę, książkę albo chwilę oddechu w
+          towarzystwie kotów, z których każdy ma własny charakter i własne ulubione miejsce w
+          lokalu.
         </p>
       </article>
 
       <div class="about__panel">
-        <img src="/sezon.jpg" alt="Przytulne wnętrze kociej kawiarni z ciepłym światłem">
+        <img
+          src="/optimized/sezon-640.webp"
+          alt="Przytulne wnętrze kociej kawiarni z ciepłym światłem"
+          width="640"
+          height="640"
+          loading="lazy"
+          decoding="async"
+        />
       </div>
     </div>
   </section>
@@ -118,16 +150,15 @@
     <div class="shell">
       <div class="section-heading">
         <p class="eyebrow">Menu</p>
-        <h2>Spokojna kawa, coś dobrego<br>i kilka sezonowych przyjemności.</h2>
+        <h2>Spokojna kawa, coś dobrego<br />i kilka sezonowych przyjemności.</h2>
       </div>
 
       <div class="menu-toolbar">
-        <div class="menu-switch" role="tablist" aria-label="Przełączanie rodzaju menu">
+        <div class="menu-switch" role="group" aria-label="Przełączanie rodzaju menu">
           <button
             class="menu-switch__button"
             type="button"
-            role="tab"
-            [attr.aria-selected]="selectedMenuTab === 'fixed'"
+            [attr.aria-pressed]="selectedMenuTab === 'fixed'"
             [class.menu-switch__button--active]="selectedMenuTab === 'fixed'"
             (click)="selectMenuTab('fixed')"
           >
@@ -136,8 +167,7 @@
           <button
             class="menu-switch__button"
             type="button"
-            role="tab"
-            [attr.aria-selected]="selectedMenuTab === 'seasonal'"
+            [attr.aria-pressed]="selectedMenuTab === 'seasonal'"
             [class.menu-switch__button--active]="selectedMenuTab === 'seasonal'"
             (click)="selectMenuTab('seasonal')"
           >
@@ -155,12 +185,12 @@
       </div>
 
       @if (selectedMenuTab === 'fixed') {
-        <div class="menu-categories" role="tablist" aria-label="Kategorie menu stałego">
+        <div class="menu-categories" role="group" aria-label="Kategorie menu stałego">
           <button
             class="menu-categories__button"
             type="button"
             [class.menu-categories__button--active]="selectedFixedCategory === 'coffee'"
-            [attr.aria-selected]="selectedFixedCategory === 'coffee'"
+            [attr.aria-pressed]="selectedFixedCategory === 'coffee'"
             (click)="selectFixedCategory('coffee')"
           >
             Kawy i dodatki
@@ -169,7 +199,7 @@
             class="menu-categories__button"
             type="button"
             [class.menu-categories__button--active]="selectedFixedCategory === 'tea'"
-            [attr.aria-selected]="selectedFixedCategory === 'tea'"
+            [attr.aria-pressed]="selectedFixedCategory === 'tea'"
             (click)="selectFixedCategory('tea')"
           >
             Herbaty
@@ -178,7 +208,7 @@
             class="menu-categories__button"
             type="button"
             [class.menu-categories__button--active]="selectedFixedCategory === 'food'"
-            [attr.aria-selected]="selectedFixedCategory === 'food'"
+            [attr.aria-pressed]="selectedFixedCategory === 'food'"
             (click)="selectFixedCategory('food')"
           >
             Coś na większy głód
@@ -187,7 +217,7 @@
             class="menu-categories__button"
             type="button"
             [class.menu-categories__button--active]="selectedFixedCategory === 'cold'"
-            [attr.aria-selected]="selectedFixedCategory === 'cold'"
+            [attr.aria-pressed]="selectedFixedCategory === 'cold'"
             (click)="selectFixedCategory('cold')"
           >
             Shakes, smoothie i inne napoje
@@ -202,7 +232,14 @@
               <div class="menu-gallery">
                 @for (photo of section.gallery; track photo.src) {
                   <div class="menu-gallery__item">
-                    <img [src]="photo.src" [alt]="photo.alt" loading="lazy">
+                    <img
+                      [src]="photo.src"
+                      [alt]="photo.alt"
+                      [attr.width]="photo.width"
+                      [attr.height]="photo.height"
+                      loading="lazy"
+                      decoding="async"
+                    />
                   </div>
                 }
               </div>
@@ -243,7 +280,14 @@
         @for (cat of catCards; track cat.name) {
           <article class="cat-card">
             <div class="cat-card__media">
-              <img [src]="cat.image" [alt]="cat.alt" loading="lazy">
+              <img
+                [src]="cat.image"
+                [alt]="cat.alt"
+                [attr.width]="cat.imageWidth"
+                [attr.height]="cat.imageHeight"
+                loading="lazy"
+                decoding="async"
+              />
               <div class="cat-card__nameplate">
                 <h3>{{ cat.name }}</h3>
               </div>
@@ -301,19 +345,36 @@
       <form class="contact-form" novalidate>
         <label>
           Imię
-          <input type="text" name="name" placeholder="Np. Marta" required autocomplete="given-name">
+          <input
+            type="text"
+            name="name"
+            placeholder="Np. Marta"
+            required
+            autocomplete="given-name"
+          />
         </label>
         <label>
           E-mail
-          <input type="email" name="email" placeholder="twoj@email.pl" required autocomplete="email">
+          <input
+            type="email"
+            name="email"
+            placeholder="twoj@email.pl"
+            required
+            autocomplete="email"
+          />
         </label>
         <label>
           Termin wizyty
-          <input type="date" name="date">
+          <input type="date" name="date" />
         </label>
         <label>
           Wiadomość
-          <textarea name="message" rows="5" placeholder="Napisz, czy planujesz spokojną wizytę, spotkanie z bliskimi czy rezerwację dla grupy." required></textarea>
+          <textarea
+            name="message"
+            rows="5"
+            placeholder="Napisz, czy planujesz spokojną wizytę, spotkanie z bliskimi czy rezerwację dla grupy."
+            required
+          ></textarea>
         </label>
         <button class="button button--primary button--full" type="submit">Wyślij zapytanie</button>
       </form>
@@ -323,7 +384,10 @@
 
 <footer class="site-footer">
   <div class="shell site-footer__inner">
-    <p>Mrau Cafe © {{ currentYear }}. Kocia kawiarnia stworzona z myślą o spokojnych chwilach i dobrym towarzystwie.</p>
+    <p>
+      Mrau Cafe © {{ currentYear }}. Kocia kawiarnia stworzona z myślą o spokojnych chwilach i
+      dobrym towarzystwie.
+    </p>
     <a href="#start">Wróć na górę</a>
   </div>
 </footer>

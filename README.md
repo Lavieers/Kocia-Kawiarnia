@@ -66,6 +66,10 @@ Projekt jest statyczny, ale przygotowany do dalszego rozwoju:
 
 https://www.figma.com/design/wkqu1tWT4xMqlm31hl50Ea/Kocia-Kawiarnia--Mrau-Cafe-?node-id=0-1&t=DHl2msTsFf7EXNTV-1
 
+##Google Lighthouse
+<img width="650" height="672" alt="image" src="https://github.com/user-attachments/assets/7bf86995-d3a0-416c-808f-62a8589e9c8c" />
+
+
 ## Autorzy
 
 Kinga Łopata, Piotr Kula, Amelia Kucharz

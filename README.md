@@ -76,6 +76,3 @@ https://www.figma.com/design/wkqu1tWT4xMqlm31hl50Ea/Kocia-Kawiarnia--Mrau-Cafe-?
 ## Autorzy
 
 Kinga Łopata, Piotr Kula, Amelia Kucharz
-
-
-*role="textbox", aria-multiline="true", aria-placeholder="Enter file contents here", aria-autocomplete="list"**aria-labelledby="codemirror-label focus-trap-help-panel"*

@@ -69,9 +69,13 @@ https://www.figma.com/design/wkqu1tWT4xMqlm31hl50Ea/Kocia-Kawiarnia--Mrau-Cafe-?
 ## Google Lighthouse
 <img width="650" height="672" alt="image" src="https://github.com/user-attachments/assets/7bf86995-d3a0-416c-808f-62a8589e9c8c" />
 
+## WAVE Evaluation Tool
+
+<img width="406" height="579" alt="image" src="https://github.com/user-attachments/assets/c3a68cb7-e6b6-4954-9b42-88e92d6c471b" />
 
 ## Autorzy
 
 Kinga Łopata, Piotr Kula, Amelia Kucharz
 
 
+*role="textbox", aria-multiline="true", aria-placeholder="Enter file contents here", aria-autocomplete="list"**aria-labelledby="codemirror-label focus-trap-help-panel"*

@@ -1,12 +1,12 @@
-# Dokumentacja projektu — Mrau Cafe
+# Dokumentacja projektu — Kocia-Kawiarnia (Mrau Cafe)
 
 ## 1. Struktura folderów projektu
 
 ```
-Kociuba/
+Kocia-Kawiarnia/
 ├── docs/
-│   ├── ux-analysis.md          # analiza UX (punkt 8)
-│   └── documentation.md        # dokumentacja projektu (punkt 9)
+│   ├── ux-analysis.md          # analiza UX 
+│   └── documentation.md        # dokumentacja projektu 
 ├── public/
 │   ├── cats/                   # zdjęcia kotów rezydentów
 │   │   ├── alex-ada.jpg
@@ -17,22 +17,14 @@ Kociuba/
 │   │   ├── felka.jpg
 │   │   ├── helena.jpg
 │   │   └── zmorek.jpg
-│   ├── adelia.ttf              # czcionka lokalna
-│   ├── cat.png
 │   ├── cynamon.jpg
 │   ├── favicon.ico
 │   ├── favicon.svg
-│   ├── hero.mp4
 │   ├── kawa.jpg
-│   ├── koot.png
-│   ├── kot.png
 │   ├── logo.jpg
-│   ├── menu-sezonowe.jpg
 │   ├── pirat.jpg
-│   ├── separator.svg
 │   ├── sezon.jpg
-│   ├── sezonmenu.jpg
-│   └── test.svg
+│   └── sezonmenu.jpg
 ├── src/
 │   ├── app/
 │   │   ├── app.html            # szablon głównego komponentu
@@ -87,7 +79,7 @@ Kociuba/
 
 ## 3. Główne komponenty strony
 
-Projekt celowo używa **jednego komponentu Angular** (`AppComponent`) zgodnie z wymaganiami zaliczenia. Wewnątrz komponentu wydzielono logiczne bloki wizualne, zaprojektowane jako reużywalne klasy CSS:
+Projekt używa **jednego komponentu Angular** (`AppComponent`) zgodnie z wymaganiami. Wewnątrz komponentu wydzielono logiczne bloki wizualne, zaprojektowane jako reużywalne klasy CSS:
 
 | Klasa CSS | Opis |
 |---|---|
